@@ -63,7 +63,7 @@ static double maxlatency = 25;
  * attribute.
  */
 /* static unsigned int blinktimeout = 800; */
-static unsigned int blinktimeout = 400;
+static unsigned int blinktimeout = 500;
 
 /*
  * thickness of underline and bar cursors
@@ -94,7 +94,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 8;
 
 /* static const char *colorname[] = { */
 /*     "#000000",  /1* black *1/ */
@@ -118,7 +118,7 @@ static const char *colorname[] = {
     "#212733",  /* dark grey - background */
     "#ff557f",  /* dim red */
     "#a7cd81",  /* dim green */
-    "#edb879",  /* dim yellow */
+    "#ffd787",  /* dim yellow */
     "#6495ed",  /* dim blue */
     "#8e6ebc",  /* dim magenta */
     "#87ceeb",  /* dim cyan */
@@ -158,8 +158,8 @@ static Rune stcursor = 0x2603; /* snowman (U+2603) */
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 80;
-static unsigned int rows = 24;
+static unsigned int cols = 120;
+static unsigned int rows = 32;
 
 /*
  * Default colour and shape of the mouse cursor
