@@ -2,6 +2,8 @@
 # See LICENSE file for copyright and license details.
 .POSIX:
 
+DESTDIR=/
+
 include config.mk
 
 SRC = st.c x.c

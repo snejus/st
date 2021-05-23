@@ -96,6 +96,10 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = 0.92;
+
+
 /* static const char *colorname[] = { */
 /*     "#000000",  /1* black *1/ */
 /*     "#fb4934",  /1* red *1/ */
@@ -131,9 +135,16 @@ static const char *colorname[] = {
     "#c31fc9",  /* magenta */
     "#19cfce",  /* cyan */
     "#ffffff",  /* white */
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"#212733",
 };
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 258;
 static unsigned int defaultcs = 7;
 static unsigned int defaultrcs = 0;
 
