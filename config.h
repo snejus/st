@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Fixed:pixelsize=17:antialias=true:autohint=true";
+static char *font = "Iosevka Fixed:pixelsize=14:aspect=1.04:antialias=true:autohint=false";
 static int borderpx = 2;
 
 /*
@@ -97,7 +97,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.92;
+float alpha = 1;
 
 
 /* static const char *colorname[] = { */
@@ -126,7 +126,8 @@ static const char *colorname[] = {
     "#6495ed",  /* dim blue */
     "#8e6ebc",  /* dim magenta */
     "#87ceeb",  /* dim cyan */
-    "#ffd8b5",  /* peachpuff - foreground */
+    "#c1c1c1",  /* peachpuff - foreground */
+    /* "#ffd8b5",  /1* peachpuff - foreground *1/ */
     "#000000",  /* black */
     "#fb4934",  /* red */
     "#a8e137",  /* green */
