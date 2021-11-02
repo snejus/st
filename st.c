@@ -1670,8 +1670,8 @@ csihandle(void)
 	switch (csiescseq.mode[0]) {
 	default:
 	unknown:
-		fprintf(stderr, "erresc: unknown csi ");
-		csidump();
+		/* fprintf(stderr, "erresc: unknown csi "); */
+		/* csidump(); */
 		/* die(""); */
 		break;
 	case '@': /* ICH -- Insert <n> blank char */
@@ -1972,8 +1972,8 @@ strhandle(void)
 		return;
 	}
 
-	fprintf(stderr, "erresc: unknown str ");
-	strdump();
+	/* fprintf(stderr, "erresc: unknown str "); */
+	/* strdump(); */
 }
 
 void
