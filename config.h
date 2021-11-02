@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Fixed:pixelsize=14:aspect=1.04:antialias=true:autohint=false";
-static int borderpx = 2;
+static char *font = "Iosevka Fixed:size=10:aspect=1.04:antialias=true:autohint=true";
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/bash";
+static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -126,7 +126,7 @@ static const char *colorname[] = {
     "#6495ed",  /* dim blue */
     "#8e6ebc",  /* dim magenta */
     "#87ceeb",  /* dim cyan */
-    "#c1c1c1",  /* peachpuff - foreground */
+    "#c1c1c1",  /* foreground */
     /* "#ffd8b5",  /1* peachpuff - foreground *1/ */
     "#000000",  /* black */
     "#fb4934",  /* red */
@@ -135,7 +135,7 @@ static const char *colorname[] = {
     "#1a8fff",  /* blue */
     "#c31fc9",  /* magenta */
     "#19cfce",  /* cyan */
-    "#ffffff",  /* white */
+    "#eeeeee",  /* white */
 
 	[255] = 0,
 
@@ -197,7 +197,7 @@ static uint forcemousemod = ShiftMask;
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
  */
-const unsigned int mousescrollincrement = 5;
+const unsigned int mousescrollincrement = 7;
 static MouseShortcut mshortcuts[] = {
 	/* button               mask            string */
 	{ Button4,              XK_NO_MOD,      "\031" },
