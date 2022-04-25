@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Fixed:size=10:aspect=1.04:antialias=true:autohint=true";
+static char *font = "Iosevka Term:size=10:aspect=1.04:antialias=true:autohint=true";
 static int borderpx = 10;
 
 /*
