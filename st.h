@@ -144,6 +144,7 @@ extern char *termname;
 extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
+extern unsigned int defaultcs = 256;
 extern float alpha;
 extern MouseKey mkeys[];
 extern const int boxdraw, boxdraw_bold, boxdraw_braille;
