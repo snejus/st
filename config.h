@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term:size=10:aspect=1.04:antialias=true:autohint=true";
-static int borderpx = 10;
+static char *font = "Iosevka Fixed:pixelsize=15:antialias=true:autohint=true";
+static int borderpx = 5;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -132,12 +132,12 @@ float alpha = 1;
 /* }; */
 static const char *colorname[] = {
     "#212733",  /* dark grey - background */
-    "#ff557f",  /* dim red */
+    "#E05058",  /* dim red */
     "#a7cd81",  /* dim green */
     "#ffd787",  /* dim yellow */
     "#6495ed",  /* dim blue */
     "#8e6ebc",  /* dim magenta */
-    "#87ceeb",  /* dim cyan */
+    "#AAE9F8",  /* dim cyan */
     "#c1c1c1",  /* foreground */
     /* "#ffd8b5",  /1* peachpuff - foreground *1/ */
     "#000000",  /* black */
