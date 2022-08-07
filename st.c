@@ -1982,7 +1982,6 @@ strhandle(void)
 	const struct { int idx; char *str; } osc_table[] = {
 		{ defaultfg, "foreground" },
 		{ defaultbg, "background" },
-		{ defaultcs, "cursor" }
 	};
 
 	term.esc &= ~(ESC_STR_END|ESC_STR);
