@@ -38,6 +38,12 @@ enum glyph_attribute {
 	ATTR_DIRTYUNDERLINE = 1 << 15,
 };
 
+enum drawing_mode {
+    DRAW_NONE = 0,
+    DRAW_BG = 1 << 0,
+    DRAW_FG = 1 << 1,
+};
+
 enum selection_mode {
 	SEL_IDLE = 0,
 	SEL_EMPTY = 1,
@@ -124,6 +130,7 @@ void *xmalloc(size_t);
 void *xrealloc(void *, size_t);
 char *xstrdup(const char *);
 
+int xgetcolor(int x, unsigned char *r, unsigned char *g, unsigned char *b);
 int isboxdraw(Rune);
 ushort boxdrawindex(const Glyph *);
 #ifdef XFT_VERSION
@@ -144,6 +151,10 @@ extern char *termname;
 extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
+/* <<<<<<< HEAD */
 extern float alpha;
 extern MouseKey mkeys[];
+/* ======= */
+/* extern unsigned int defaultcs; */
+/* >>>>>>> wide */
 extern const int boxdraw, boxdraw_bold, boxdraw_braille;
