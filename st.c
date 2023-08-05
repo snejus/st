@@ -952,7 +952,7 @@ ttyresize(int tw, int th)
 }
 
 void
-ttyhangup()
+ttyhangup(void)
 {
 	/* Send SIGHUP to shell */
 	kill(pid, SIGHUP);
@@ -1883,11 +1883,18 @@ csihandle(void)
 	case 'm': /* SGR -- Terminal attribute (color) */
 		tsetattr(csiescseq.arg, csiescseq.narg);
 		break;
-	case 'n': /* DSR – Device Status Report (cursor position) */
-		if (csiescseq.arg[0] == 6) {
+	case 'n': /* DSR -- Device Status Report */
+		switch (csiescseq.arg[0]) {
+		case 5: /* Status Report "OK" `0n` */
+			ttywrite("\033[0n", sizeof("\033[0n") - 1, 0);
+			break;
+		case 6: /* Report Cursor Position (CPR) "<row>;<column>R" */
 			len = snprintf(buf, sizeof(buf), "\033[%i;%iR",
-					term.c.y+1, term.c.x+1);
+			               term.c.y+1, term.c.x+1);
 			ttywrite(buf, len, 0);
+			break;
+		default:
+			goto unknown;
 		}
 		break;
 	case 'r': /* DECSTBM -- Set Scrolling Region */
@@ -2045,8 +2052,10 @@ strhandle(void)
 			if (p && !strcmp(p, "?")) {
 				osc_color_response(j, 0, 1);
 			} else if (xsetcolorname(j, p)) {
-				if (par == 104 && narg <= 1)
+				if (par == 104 && narg <= 1) {
+					xloadcols();
 					return; /* color reset without parameter */
+				}
 				fprintf(stderr, "erresc: invalid color j=%d, p=%s\n",
 				        j, p ? p : "(null)");
 			} else {
@@ -2526,6 +2535,9 @@ check_control_code:
 	 * they must not cause conflicts with sequences.
 	 */
 	if (control) {
+		/* in UTF-8 mode ignore handling C1 control characters */
+		if (IS_SET(MODE_UTF8) && ISCONTROLC1(u))
+			return;
 		tcontrolcode(u);
 		/*
 		 * control codes are not shown ever
@@ -2572,8 +2584,10 @@ check_control_code:
 		gp = &term.line[term.c.y][term.c.x];
 	}
 
-	if (IS_SET(MODE_INSERT) && term.c.x+width < term.col)
+	if (IS_SET(MODE_INSERT) && term.c.x+width < term.col) {
 		memmove(gp+width, gp, (term.col - term.c.x - width) * sizeof(Glyph));
+		gp->mode &= ~ATTR_WIDE;
+	}
 
 	if (term.c.x+width > term.col) {
 		tnewline(1);
