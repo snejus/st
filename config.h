@@ -5,9 +5,12 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Fixed:size=11.5:antialias=true:autohint=true";
+/* static char *font = "Iosevka Nerd Font:size=15:antialias=true:autohint=true"; */
+static char *font = "Iosevka Fixed:size=12.5:antialias=true:autohint=true";
 static char *font2[] = {
-    "NotoEmoji:size=10:antialias=false:autohint=false"
+    "NotoEmoji:size=11:antialias=false:autohint=false"
+    /* "Symbols Nerd Font:size=10:antialias=true:autohint=true" */
+    /* "Symbola:size=10:antialias=true:autohint=true" */
 };
 static int borderpx = 5;
 
@@ -134,7 +137,7 @@ float alpha = 1;
 /*     "#ffffff",  /1* white *1/ */
 /* }; */
 static const char *colorname[] = {
-    "#212733",  /* dark grey - background */
+    "#1b202a",  /* dark grey - background */
     "#E05058",  /* dim red */
     "#a7cd81",  /* dim green */
     "#ffd787",  /* dim yellow */
@@ -157,12 +160,13 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#acac5c",
 	"#555555",
-	"#212733",
+	"#1b202a",
 };
+
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 258;
-static unsigned int defaultcs = 7;
-static unsigned int defaultrcs = 0;
+unsigned int defaultcs = 7;
+static unsigned int defaultrcs = 257;
 
 
 /* https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-P  s-SP-q.1D81
