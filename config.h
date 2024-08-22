@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "Iosevka Fixed:size=12.5:antialias=true:autohint=true";
+static int borderpx = 5;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -53,14 +53,14 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 2;
-static double maxlatency = 33;
+static double minlatency = 5;
+static double maxlatency = 25;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 500;
 
 /*
  * thickness of underline and bar cursors
@@ -95,33 +95,30 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+        "#000000",  /* black */
+        "#fb4934",  /* red */
+        "#a8e137",  /* green */
+        "#fc9b29",  /* yellow */
+        "#1a8fff",  /* blue */
+        "#c31fc9",  /* magenta */
+        "#19cfce",  /* cyan */
+        "#aeaeee",  /* white */
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+        "#1b202a",  /* dark grey - background */
+        "#E05058",  /* dim red */
+        "#a7cd81",  /* dim green */
+        "#ffd787",  /* dim yellow */
+        "#6495ed",  /* dim blue */
+        "#8e6ebc",  /* dim magenta */
+        "#AAE9F8",  /* dim cyan */
+        "#c1c1c1",  /* foreground */
+        [255] = 0,
 
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+        /* more colors can be added after 255 to use with DefaultXX */
+        "#cccccc",
+        "#555555",
+        "#c1c1c1", /* default foreground colour */
+        "#1b202a", /* default background colour */
 };
 
 
@@ -147,8 +144,8 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 80;
-static unsigned int rows = 24;
+static unsigned int cols = 120;
+static unsigned int rows = 32;
 
 /*
  * Default colour and shape of the mouse cursor
