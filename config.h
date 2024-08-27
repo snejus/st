@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Fixed:size=12.5:antialias=true:autohint=true";
+static char *font = "Iosevka Nerd Font:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = {
-    "NotoEmoji:size=11:antialias=false:autohint=false"
+    "NotoEmoji:pixelsize=12:antialias=false:autohint=false"
     /* "Symbols Nerd Font:size=10:antialias=true:autohint=true" */
     /* "Symbola:size=10:antialias=true:autohint=true" */
 };
@@ -70,7 +70,7 @@ static unsigned int blinktimeout = 500;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 1;
 
 /*
 * 1: render most of the lines/blocks characters without using the font for
